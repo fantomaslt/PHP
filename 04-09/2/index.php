@@ -11,7 +11,7 @@ require 'functions.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -39,10 +39,8 @@ require 'functions.php';
             </form>
         </div>
     </div>
-    <div id="centr" >
-        <?php echo $message;
-        
-        print_r($_SESSION)?>
+    <div id="centr">
+        <?php echo $message; ?>
     </div>
     <div class="container" id="show">
         <div class="row justify-content-md-center">
@@ -55,7 +53,7 @@ require 'functions.php';
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    
+
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
@@ -87,7 +85,7 @@ require 'functions.php';
                     </div>
                 </nav>
                 <div class="d-flex align-content-start flex-wrap">
-                    
+
                     <div class="card" style="width: 16rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -124,12 +122,12 @@ require 'functions.php';
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                
+
                 </div>
             </div>
         </div>
-        
-        
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
