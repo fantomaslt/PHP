@@ -16,18 +16,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (isset($_POST['name'])) {
         $username = $_POST['name'];
-        $_SESSION['username']=$_POST['name'];
+        $_SESSION['username'] = $_POST['name'];
     } // Get username
     if (isset($_POST['pass'])) {
         $password = $_POST['pass'];
-        $_SESSION['password']=$_POST['pass'];
+        $_SESSION['password'] = $_POST['pass'];
     } // get password
     if ($username === 'qwerty' && $password === 'qwerty') {
         $message = "<style> #show {display: block;} ,</style>";
-        $_SESSION['authorization']='TRUE';
+        $_SESSION['authorization'] = 'TRUE';
     } else {
-             $message = 'Įvesti duomenys nėra teisingi';
-        $_SESSION['authorization']='False';
+        $message = 'Įvesti duomenys nėra teisingi';
+        $_SESSION['authorization'] = 'False';
     }
 }
 
