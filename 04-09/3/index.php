@@ -20,16 +20,16 @@ include_once 'functions.php';
         <button class="btn btn-danger" name="submit">submit</button>
     </form>
     <div>
-    <?php
-
-    echo $new ;
-    
-    echo '<br>'.'<br>'.'<br>';
-    
-    echo "automatiskai sugeneruota funkcija:  ";
-    TextInput('Įrašyk tekstą');
-
-    ?>
+        <?php
+        
+        echo $new;
+        
+        echo '<br>'.'<br>'.'<br>';
+        
+        echo "automatiskai sugeneruota funkcija:  ";
+        TextInput('Įrašyk tekstą');
+        
+        ?>
     </div>
 
 </div>
