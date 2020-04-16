@@ -1,0 +1,13 @@
+body {
+    margin-top:1.5%;
+}
+#show {
+   display: none;
+}
+.error{
+    color: darkred;
+}
+#centr {
+    text-align: center;
+    padding: 20px;
+}
