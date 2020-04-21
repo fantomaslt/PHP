@@ -1,0 +1,21 @@
+body {
+    margin-top: 0.3%;
+
+}
+.upper {
+    border-bottom: 1px solid black;
+    /*width: fit-content;*/
+}
+/*.icon {*/
+/*       color: #000;*/
+/*   }*/
+
+.icon:hover {
+    color: darkred;
+}
+.nav-item {
+    padding: 5px;
+}
+.upper1 {
+
+}
