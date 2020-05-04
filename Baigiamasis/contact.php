@@ -1,3 +1,7 @@
+<?php
+require 'php.php';
+require_once 'sessions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +34,9 @@
 <div class="container-fluid">
     <!--    blokas su info issijungia ant telefonu-->
     <div class="karma-header">
-        <div class="d-none d-sm-block upper ">
+        <div class="d-none d-md-block d-lg-blockupper ">
             <div class="row ">
-                <div class="col-sm-11">
+                <div class="col-sm-10">
                     <ul class="nav upItems">
                         <li class="nav-item">
                             <a class=" fas fa-map-marker-alt "> Tiltu g. 26A, Klaipeda 91246 Lithuania</a>
@@ -45,7 +49,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class=" col-sm-1  ">
+                <div class=" col-sm-2  ">
                     <ul class="nav">
                         <li class="nav-item">
                             <i class="fab fa-instagram icon"></i>
@@ -64,7 +68,7 @@
         <!--    Nav baras -->
         <div>
             <nav class="navbar navbar-expand-lg  navbar-dark  ">
-                <img src="img/mum.png" width="180" height="100" alt="">
+                <img src="img/karma_Logo_Big2.png" width="244" height="100" alt="" style="margin-left: 10%">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -72,33 +76,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <!--                        <li class="nav-item active">-->
-                        <!--                            <button type="button" class="btn btn-outline-danger">Home</button>-->
-                        <!--                        </li>-->
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">About us</button>
+                        <li class="nav-item active">
+                            <a class="btn-nav " href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Menu</button>
+                            <a class="btn-nav " href="#">About us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="btn-nav" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Menu-food.php">Our Menu</a>
+                                <a class="dropdown-item" href="menu-hokahs.php">Our Hookahs</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Events</button>
+                            <a class="btn-nav " href="events.php">Events</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Contact us</button>
+                            <a class="btn-nav-contact " href="contact.php">Contact us</a>
                         </li>
-                        <!--                        <li class="nav-item dropdown">-->
-                        <!--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"-->
-                        <!--                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                        <!--                                Dropdown-->
-                        <!--                            </a>-->
-                        <!--                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-                        <!--                                <a class="dropdown-item" href="#">Action</a>-->
-                        <!--                                <a class="dropdown-item" href="#">Another action</a>-->
-                        <!--                                <div class="dropdown-divider"></div>-->
-                        <!--                                <a class="dropdown-item" href="#">Something else here</a>-->
-                        <!--                            </div>-->
-                        <!--                        </li>-->
+
                     </ul>
                 </div>
             </nav>
@@ -109,17 +109,79 @@
             <div class="row">
                 <div class="col-sm-12 karma-info">
                     <h1>
-                        <span class="karma-title">Take Your Place</span>
-
+                        <span class="karma-title">How to find</span>
+                        Our contacts
                     </h1>
-                    <p class="">Table reservation</p>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- Kontatu rezervacijos forma -->
+    <!-- ======================================================================================-->
+
     <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 pad">
+                    <div class="contact_info">
+                        <h2>
+                            <p class="title-contacts">Working Hours</p>
+                        </h2>
+                        <div>
+                            <h6 class="contact-h6">Weekdays</h6>
+                            From 10:00 to 23:00
+                        </div>
+                        <div>
+                            <h6 class="contact-h6">Weekend</h6>
+                            From 10:00 to 23:00
+                            <br>
+                            or to the last client
+                        </div>
+                    </div>
+                </div><!-- =================== -->
+                <div class="col-4">
+                    <div class="contact_info">
+                        <h2>
+                            <p class="title-contacts">Contact Info</p>
+                        </h2>
+                        <div>
+                            <h6 class="contact-h6">Our Phone</h6>
+                            +1 (234) 555 - 67 - 89
+                        </div>
+                        <div>
+                            <h6 class="contact-h6">Our Location</h6>
+                            817 N California Ave,
+                            <br>
+                            Chicago, IL 60622
+                        </div>
+                    </div>
+                </div><!-- ================ -->
+                <div class="col-4">
+                    <div class="contact_info">
+                        <h2>
+                            <p class="title-contacts">Stay in Touch</p>
+                        </h2>
+                        <div>
+                            <h6 class="contact-h6">Social Links</h6>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-instagram contact-icon "></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook-f contact-icon"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube contact-icon"></i></a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h6 class="contact-h6">Email</h6>
+                            <strong>General:</strong> <a class="contact_info" href="mailto:info@karmabar.lt">info@karmabar.lt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Kontatu rezervacijos forma -->
+    <div class="container-fluid  contact">
         <div id="contact">
             <p>If you plan your leisure in advance and do not want to get into a situation when the planned dinner is
                 canceled due to the lack of free seats, reserve a table in advance. You can reserve a table by filling
@@ -128,33 +190,50 @@
         </div>
         <div class="contact-form">
             <h1><span>Got Questions?</span> <br> Get in tuoch with us</h1>
-            <form>
+            <form action="contact.php#contact1" id="contact1" method="post">
                 <div class="row">
                     <div class="col-lg-4">
-                        <input class="form-inputs" type="text" id="date-input" placeholder="Select date ">
+                        <div class="error"><?php echo $errdate; ?></div>
+                        <input class="form-inputs" type="text" id="date-input" placeholder="Select date" name="date">
                     </div>
                     <div class="col-lg-4">
-                        <input class="form-inputs" type="text" id="time-input" placeholder="Choose time ">
+                        <div class="error"><?php echo $errtime; ?></div>
+                        <input class="form-inputs" type="text" id="time-input" placeholder="Choose time" name="time">
                     </div>
                     <div class="col-lg-4">
-                        <input class="form-inputs" type="text" name="guests" placeholder="Guest number ">
+                        <div class="error"><?php echo $errguests; ?></div>
+                        <select class="select-inputs form-inputs"  name="guest">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
                     </div>
                     <div class="col-lg-4">
+                        <div class="error"><?php echo $nameErr; ?></div>
                         <input class="form-inputs" type="text" name="name" placeholder="Enter your name">
                     </div>
                     <div class="col-lg-4">
+                        <div class="error"><?php echo $emailErr; ?></div>
                         <input class="form-inputs" type="text" name="email" placeholder="Enter your email">
                     </div>
                     <div class="col-lg-4">
-                        <input class="form-inputs" type="text" name="phone" placeholder="Enter your name ">
+                        <div class="error"><?php echo $errphone; ?></div>
+                        <input class="form-inputs" type="text" name="phone" placeholder="Enter your name" value="+370">
                     </div>
                     <div class="col-lg-12">
-                        <label for="message">Example textarea</label>
-                        <textarea class="form-control" id="message" placeholder="Your message "
-                                  name="message"></textarea>
+                        <div class="error"><?php echo $message; ?></div>
+                        <textarea class="form-control" id="message" placeholder=" Type your message : " name="message"></textarea>
                     </div>
                     <div class="col-lg-12 ">
-                    <button class="btn btn-front1  btn-block btn-full" type="submit">Send your message</button>
+                        <button class="btn btn-front2  btn-block btn-full" type="submit">Send your message</button>
                     </div>
                 </div>
             </form>
@@ -167,27 +246,27 @@
                 <span class="up_title">Why We</span>
                 Our Benefits
             </h2>
-            <div class="block_inner">
+            <div>
                 <div class="row">
                     <div class="col-md-4">
                         <div >
                             <i class="fas fa-utensils icon-contact"></i>
                             <h4>Freshly Cooked</h4>
-                            <p class="iconbox">Our steaks are always fresh and perfect, because we use only best meat from proven suppliers.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga </p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div >
                             <i class="fas fa-users icon-contact"></i>
                             <h4>Professional Team</h4>
-                            <p class="iconbox">We understand how to best serve our customers through tried and true service principles.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div>
                             <i class="fa fa-truck icon-contact"></i>
                             <h4>Quick Delivery</h4>
-                            <p class="iconbox">Quick and quality delivering. You may sure, that your order will be fresh, just like from a fire.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga</p>
                         </div>
                     </div>
                 </div>
@@ -196,21 +275,21 @@
                         <div >
                             <i class="fas fa-cocktail icon-contact"></i>
                             <h4>Wide range drinks</h4>
-                            <p class="iconbox">No matter what you prefer: strong whiskey, light beer or tasty wine. We have all of this and more.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div>
                             <i class="fas fa-clock icon-contact"></i>
                             <h4>Save your time</h4>
-                            <p class="iconbox">We know the cost of the time, so we cooking for you really fast, but always with the best quality.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div >
                             <i class="fa fa-music icon-contact"></i>
                             <h4>Live Music</h4>
-                            <p class="iconbox">Every evening you can enjoy not only perfect steaks, but also wonderful lounge live music.</p>
+                            <p class="iconbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga</p>
                         </div>
                     </div>
                 </div>
@@ -227,6 +306,7 @@
                 width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
     </div>
+    <!--    ======================  footer ====================-->
     <div class="container-fluid  footer">
         <a href="#" class="back_to_top"><i class="fa fa-chevron-up"></i></a>
         <div class="container">
@@ -236,14 +316,14 @@
                         <span class="title"> About Us</span>
                     </h1>
                     <div>
-                        <p>The Restbeef Steakhouse was est in 1989 in Chicago City. With more than 30 years of
-                            experience and base on traditional recipes,
-                            we understand how to best serve our customers through tried and true service principles.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque commodi consequatur
+                            dolore doloremque ducimus facilis fugit, magni maxime modi molestiae numquam perferendis
+                            placeat provident quis reprehenderit sit vel veritatis!</p>
                     </div>
                 </div>
                 <div class="col-md-4 footer-col"><h1>
-                    <span> Stay in Touch</span>
-                </h1>
+                        <span> Stay in Touch</span>
+                    </h1>
                     <div>
                         <form class="intouch_form" name="intouch">
                             <input class="input-BTN-1" type="email" placeholder=" Enter Your Email">
@@ -259,12 +339,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 footer-col"><h1>
-                    <span class="title"> Contacts</span>
-                </h1>
+                        <span class="title"> Contacts</span>
+                    </h1>
                     <div>
-                        <p>817 N California Ave Chicago, IL 60622</p>
-                        <p>817 N California Ave Chicago, IL 60622</p>
-                        <p>817 N California Ave Chicago, IL 60622</p>
+                        <p>Address</p>
+                        <p>Working Hours</p>
+                        <p>Phone</p>
                     </div>
                 </div>
             </div>
@@ -273,13 +353,13 @@
     <!--    Info isnyksta ant telefono  -->
     <div class="d-none d-md-block">
         <div class="row">
-            <div class="col-sm-2">
-                <div class="copyright">
+            <div class="col-sm-2 copyright">
+                <div >
                     © 2020 karma Bar. All Rights Reserved.
                 </div>
             </div>
-            <div class="col-sm-10 >">
-                <ul class="footer_links_list">
+            <div class="col-sm-10 footer_links_list copyright>">
+                <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Payment Methods</a></li>
                     <li><a href="#">Delivery Information</a></li>
@@ -293,7 +373,9 @@
 
 <script src="js.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

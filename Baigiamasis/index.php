@@ -1,3 +1,7 @@
+<?php
+require 'php.php';
+require_once 'sessions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +20,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
 <div class="container-fluid">
     <!--    blokas su info issijungia ant telefonu-->
+    <!--    blokas su info issijungia ant telefonu-->
     <div class="karma-header">
-        <div class="d-none d-sm-block upper ">
+        <div class="d-none d-md-block d-lg-blockupper ">
             <div class="row ">
-                <div class="col-sm-11">
+                <div class="col-sm-10 ">
                     <ul class="nav upItems">
                         <li class="nav-item">
                             <a class=" fas fa-map-marker-alt "> Tiltu g. 26A, Klaipeda 91246 Lithuania</a>
@@ -38,7 +42,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class=" col-sm-1  ">
+                <div class=" col-sm-2  ">
                     <ul class="nav">
                         <li class="nav-item">
                             <i class="fab fa-instagram icon"></i>
@@ -57,7 +61,7 @@
         <!--    Nav baras -->
         <div>
             <nav class="navbar navbar-expand-lg  navbar-dark  ">
-                <img src="img/mum.png" width="180" height="100" alt="">
+                <img src="img/karma_Logo_Big2.png" width="244" height="100" alt="" style="margin-left: 10%">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -65,33 +69,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-<!--                        <li class="nav-item active">-->
-<!--                            <button type="button" class="btn btn-outline-danger">Home</button>-->
-<!--                        </li>-->
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">About us</button>
+                        <li class="nav-item active">
+                            <a class="btn-nav " href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Menu</button>
+                            <a class="btn-nav " href="#">About us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="btn-nav" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Menu
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Menu-food.php">Our Menu</a>
+                                <a class="dropdown-item" href="menu-hokahs.php">Our Hookas</a>
+                            </div>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Events</button>
+                            <a class="btn-nav " href="events.php">Events</a>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-danger">Contact us</button>
+                            <a class="btn-nav-contact " href="contact.php">Contact us</a>
                         </li>
-<!--                        <li class="nav-item dropdown">-->
-<!--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"-->
-<!--                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                                Dropdown-->
-<!--                            </a>-->
-<!--                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                                <a class="dropdown-item" href="#">Action</a>-->
-<!--                                <a class="dropdown-item" href="#">Another action</a>-->
-<!--                                <div class="dropdown-divider"></div>-->
-<!--                                <a class="dropdown-item" href="#">Something else here</a>-->
-<!--                            </div>-->
-<!--                        </li>-->
+
                     </ul>
                 </div>
             </nav>
@@ -102,16 +102,17 @@
             <div class="row">
                 <div class="col-sm-12 karma-info">
                     <h1>
-                        <span class="karma-title">Best Steaks and Grill</span>
-                        Restbeef SteakHouse
+                        <span class="karma-title">Best Hookahs and Coctails in Town</span>
+                        Karma Bar
                     </h1>
-                    <p class="restbeef_header_description">
-                        We are making the original steaks based on traditional recipes. We use only fresh meat from <br>
-                        the best suppliers. Our staff are professionals, and we make everything to left our clients
-                        satisfied.
+                    <p class="">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequuntur deleniti id,
+                        itaque laborum maxime molestiae natus necessitatibus placeat provident, quas sed sequi, sunt
+                        totam voluptatibus! At error excepturi nemo. fgjh gfdj hghj gjf fxgj xfgjxfgjh fgj fj xgfjxgfj
+                        xsfhg xfg hfxghxfghxfgjxfgjxjfgxxfh
                     </p>
-                    <button type="button" class="btn btn-front">Watch Menu</button>
-                    <button type="button" class="btn btn-front1">Book A Table</button>
+                    <a type="button" class="btn btn-front" href="Menu-food.php">Watch Menu</a>
+                    <a class=" btn btn-front1 " href="contact.php">Book A Table</a>
 
                 </div>
 
@@ -121,9 +122,9 @@
     <!--    Antras Blokas Cards-->
     <div class="container">
         <div class="karma-info2 ">
-            <span class="restbeef_up_title">Freshly Taste</span>
-            <h2 class="align_center restbeef_js_padding" data-padding="0 0 15px 0" style="padding: 0px 0px 15px;">
-                <span class="restbeef_up_title">Freshly Taste</span>
+            <span>Freshly Taste</span>
+            <h2 class="align_center" data-padding="0 0 15px 0" style="padding: 0px 0px 15px;">
+                <span>Freshly Taste</span>
                 New in our Menu
             </h2>
             <div class="card-deck">
@@ -136,9 +137,7 @@
                     <div class="card-body ">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural
-                            lead-in
-                            to
-                            additional content. This content is a little bit longer.</p>
+                            lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -187,22 +186,24 @@
     <div class="container-fluid">
         <div class="contact-form">
             <h1><span>Got Questions?</span> <br> Get in tuoch with us</h1>
-            <form>
+            <form action="index.php#form1" method="post" id="form1">
                 <div class="form-group row">
                     <div class="col-sm-6">
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                               placeholder="name@example.com">
+                        <div class="error"><?php echo $emailErr; ?> </div>
+                        <input type="email" class="form-control" name="email"
+                               placeholder="name@example.com ">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" placeholder="First name">
+                        <div class="error"><?php echo $nameErr1; ?> </div>
+                        <input type="text" class="form-control" placeholder="Type your name" name="name1">
                     </div>
                 </div>
                 <div class="form-group-row ">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <div class="error"> <?php echo $message1; ?></div>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="message"></textarea>
                 </div>
                 <div class="form-group-row sendUs">
-                    <button class="btn btn-front1">send us a massage</button>
+                    <button class="btn btn-front1" name="submit1" type="submit">send us a massage</button>
                 </div>
             </form>
         </div>
@@ -219,9 +220,7 @@
                     <img src="img/029.jpg" class="card-img-top " alt="...">
                     <div class="price">
                         <del>$20</del>
-                    </div>
-                    <div class="price2">
-                        <span style="text-align: center ">$15</span>
+                        <span>$15</span>
                     </div>
                     <div class="card-body ">
                         <h5 class="card-title">Card title</h5>
@@ -256,6 +255,7 @@
             </div>
         </div>
     </div>
+<!--    ======================  footer ====================-->
     <div class="container-fluid  footer">
         <a href="#" class="back_to_top"><i class="fa fa-chevron-up"></i></a>
         <div class="container">
@@ -265,14 +265,14 @@
                         <span class="title"> About Us</span>
                     </h1>
                     <div>
-                        <p>The Restbeef Steakhouse was est in 1989 in Chicago City. With more than 30 years of
-                            experience and base on traditional recipes,
-                            we understand how to best serve our customers through tried and true service principles.</p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam atque commodi consequatur
+                            dolore doloremque ducimus facilis fugit, magni maxime modi molestiae numquam perferendis
+                            placeat provident quis reprehenderit sit vel veritatis!</p>
                     </div>
                 </div>
                 <div class="col-md-4 footer-col"><h1>
-                    <span> Stay in Touch</span>
-                </h1>
+                        <span> Stay in Touch</span>
+                    </h1>
                     <div>
                         <form class="intouch_form" name="intouch">
                             <input class="input-BTN-1" type="email" placeholder=" Enter Your Email">
@@ -288,12 +288,12 @@
                     </div>
                 </div>
                 <div class="col-md-4 footer-col"><h1>
-                    <span class="title"> Contacts</span>
-                </h1>
+                        <span class="title"> Contacts</span>
+                    </h1>
                     <div>
-                        <p>817 N California Ave Chicago, IL 60622</p>
-                        <p>817 N California Ave Chicago, IL 60622</p>
-                        <p>817 N California Ave Chicago, IL 60622</p>
+                        <p>Address</p>
+                        <p>Working Hours</p>
+                        <p>Phone</p>
                     </div>
                 </div>
             </div>
@@ -302,13 +302,13 @@
     <!--    Info isnyksta ant telefono  -->
     <div class="d-none d-md-block">
         <div class="row">
-            <div class="col-sm-2">
-                <div class="copyright">
+            <div class="col-sm-2 copyright">
+                <div >
                     © 2020 karma Bar. All Rights Reserved.
                 </div>
             </div>
-            <div class="col-sm-10 >">
-                <ul class="footer_links_list">
+            <div class="col-sm-10 footer_links_list copyright>">
+                <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Payment Methods</a></li>
                     <li><a href="#">Delivery Information</a></li>
@@ -317,6 +317,8 @@
         </div>
     </div>
 </div>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
